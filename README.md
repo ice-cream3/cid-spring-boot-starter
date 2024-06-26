@@ -1,3 +1,6 @@
+# cid-spring-boot-starter
+cid-spring-boot-starter
+主要为了引用:cid-spring-boot-autoconfigure
 1. 创建名字为 xxx-spring-boot-starter 的启动器项目
 2. 创建名字为 xxx-spring-boot-autoconfigure的项目
     * 编写属性绑定类 xxxProperties.

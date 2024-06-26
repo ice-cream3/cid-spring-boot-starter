@@ -7,3 +7,20 @@
 
 * 启动器项目为空项目,用来引入xxx-spring-boot-autoconfigure等其他依赖
 * 项目引入starter,配置需要配置的信息
+
+日志打印关键 [logId::%X{cid}]
+```
+xml配置:
+    <console name="Console" target="SYSTEM_OUT">
+            <!--输出日志的格式-->
+            <PatternLayout pattern="[cid::%X{cid}][%d{yyyy-MM-dd HH:mm:ss.SSS}] [%p] - %l - %m%n"/>
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY" />
+    </console>
+springboot配置:
+    logging:
+      pattern:
+        #配置日志全链路跟踪 cid
+        console: "[logId::%X{cid}] [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%p] - %l - %m%n"
+
+```
+> SAFDAS
